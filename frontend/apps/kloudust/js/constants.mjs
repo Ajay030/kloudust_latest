@@ -3,8 +3,8 @@
  * (C) 2015 TekMonks. All rights reserved.
  * License: See enclosed license.txt file.
  */
-const FRONTEND = "https://{{{hostname}}}";
-const BACKEND = "https://{{{hostname}}}:9090";
+const FRONTEND = new URL(window.location).protocol + "//" + new URL(window.location).host;
+const BACKEND = new URL(window.location).protocol + "//" + new URL(window.location).host + ":9090";
 const APP_NAME = "kloudust";
 const APP_PATH = `${FRONTEND}/apps/${APP_NAME}`;
 const API_PATH = `${BACKEND}/apps/${APP_NAME}`;

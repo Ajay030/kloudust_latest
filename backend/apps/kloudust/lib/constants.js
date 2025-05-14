@@ -49,8 +49,6 @@ exports.UNDER_MONKSHU = true;
 
 exports.EXITOK = s => exports.LOGINFO((s?s+" ":"")+exports.SUCCESS_MSG);
 exports.EXITFAILED = s => exports.LOGERROR((s?s+" ":"")+exports.FAILED_MSG); 
-let _allowExit = true;
-exports.exitallow = allowFlag => _allowExit = allowFlag;
 
 function _getErrorMessage(e) {
     if (e instanceof Error) return `${e.message}\n[ERROR] ${e.stack}`;

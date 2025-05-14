@@ -29,9 +29,7 @@ exports.initAsync = async _ => {
  *          promise which resolves when it has been exectued, else nothing.
  */
 exports.add = (functionToCall, params=[], isAsync=false, delay=0, callback) => {
-    KLOUD_CONSTANTS.exitallow(false);
-    queueexecutor.add(functionToCall, params, isAsync, delay, _=>{
-        KLOUD_CONSTANTS.exitallow(queueexecutor.getQueueDepth()==0); callback});
+    queueexecutor.add(functionToCall, params, isAsync, delay, _=>callback);
 }
     
 
